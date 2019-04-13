@@ -1,5 +1,6 @@
 package pl.dpdproject;
 
+import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -7,7 +8,13 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class CreateCustomer {
     public static void main(String[] args) {
+
         double rnd = Math.floor(Math.random()*11);
+
+        Configuration.browser="chrome";
+        Configuration.headless = false;
+        Configuration.holdBrowserOpen = true;
+        Configuration.browserSize = "1920x1080";
         open("http://10.240.20.156:8080/backend/login");
         $("#username").sendKeys("E2ETSYMBAL");
         $("#password").sendKeys("R1EBTNv0keIda");
