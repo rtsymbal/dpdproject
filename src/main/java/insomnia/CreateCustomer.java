@@ -1,6 +1,8 @@
 package pl.dpdproject;
 
 import com.codeborne.selenide.Configuration;
+import insomnia.pages.LoginPage;
+import insomnia.pages.domain.User;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -16,10 +18,19 @@ public class CreateCustomer {
         Configuration.headless = false;
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1440x960";
-        open("http://10.240.20.156:8080/it4em/customer/corporateCustomerDefinition/?lang=en");
-        $("#username").val("E2ETSYMBAL");
-        $("#password").val("R1EBTNv0keIda");
-        $(".login-button").click();
+        Configuration.baseUrl = "http://10.240.20.156:8080";
+
+        User roman = new User("E2ETSYMBAL", "R1EBTNv0keIda");
+
+
+        new LoginPage()
+                .open()
+                .loginAs(roman);
+
+//        open("http://10.240.20.156:8080/it4em/customer/corporateCustomerDefinition/?lang=en");
+//        $("#username").val("E2ETSYMBAL");
+//        $("#password").val("R1EBTNv0keIda");
+//        $(".login-button").click();
 
         //Corporate Customer Definition
         $("#depotUnitId").val("1077");
