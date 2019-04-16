@@ -27,10 +27,6 @@ public class CreateCustomer {
                 .open()
                 .loginAs(roman);
 
-//        open("http://10.240.20.156:8080/it4em/customer/corporateCustomerDefinition/?lang=en");
-//        $("#username").val("E2ETSYMBAL");
-//        $("#password").val("R1EBTNv0keIda");
-//        $(".login-button").click();
 
         //Corporate Customer Definition
         $("#depotUnitId").val("1077");
@@ -51,14 +47,13 @@ public class CreateCustomer {
         //Address Definition
         $(By.xpath(".//*[@id='ui-id-11']/span[1]")).click();
         $("#region-address-companyName").val("E2E_TEST_ONE_COMPANY");
-        $(By.xpath(".//*[@id='region-address-serviceNote-button']/span[1]")).click();
+        $("#region-address-serviceNote-button > span.ui-icon.ui-icon-triangle-1-s").click();
         $(By.xpath("//li[contains(text(),'E-mail')]")).click();
         $("#select-workarea").click();
         $("#work-area-toast-form-zipCode").val("77144");
         $("#toast-search-work-area").click();
         $(".x-grid-cell-inner ").click();
         $(".arrow-button").click();
-
         $("#region-address-street").val("Chemin de Halage");
         $("#region-address-houseNo").val(""+rnd);
         $("#select-customer-address-geocode").click();
@@ -74,6 +69,18 @@ public class CreateCustomer {
 
         //Credit Information
         $("#ui-id-4 > span.ui-accordion-header-icon.ui-icon.ui-icon-custom-plus").click();
+        $("#bankLinkPayment-button > span.ui-icon.ui-icon-triangle-1-s").click();
+        $(By.xpath("//li[contains(text(),'Enabled')]")).click();
+        $("#invoiceTerm-button > span.ui-icon.ui-icon-triangle-1-s").click();
+        $(By.xpath("//li[contains(text(),'Monthly')]")).click();
+        $("#invoicingWeight-button > span.ui-icon.ui-icon-triangle-1-s").click();
+        $(By.xpath("//li[contains(text(),'Pick-up weight')]")).click();
+        $("#averageParcelWeigh").val("3.55");
+
+
+
+
+
 
 
 
