@@ -6,10 +6,10 @@ import insomnia.pages.domain.User;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selectors.*;
+
 
 public class CreateCustomer {
+
     public static void main(String[] args) {
 
         int rnd = (int) Math.floor(Math.random()*111);
@@ -21,6 +21,8 @@ public class CreateCustomer {
         Configuration.baseUrl = "http://10.240.20.156:8080";
 
         User roman = new User("E2ETSYMBAL", "R1EBTNv0keIda");
+        String userEmail = "roman.tsymbal-external@dpdgroup.com";
+        String customerName = "E2E_TEST_ONE";
 
 
         new LoginPage()
@@ -32,17 +34,15 @@ public class CreateCustomer {
         $("#depotUnitId").val("1077");
         $(".ui-menu-item").click();
         $(By.xpath(".//*[@id='corporate-customer-main-section']/div[5]/div[2]/div[2]/div[2]/label/span[1]")).click();
-        $("#customerName").val("E2E_TEST_ONE");
-        $("#shortName").val("E2E_TEST_ONE");
-        $("#idmEmail").val("roman.tsymbal-external@dpdgroup.com");
+        $("#customerName").val(customerName);
+        $("#shortName").val(customerName);
+        $("#idmEmail").val(userEmail);
         $("#phone").val("1234567890");
-//        Select idmArea = new Select($("#idmArea"));
-//        idmArea.selectByValue("+33");
         $(By.xpath(".//*[@id='idmArea-button']/span[1]")).click();
         $(By.xpath("//li[contains(text(),'+33 - FRANCE')]")).click();
         $("#idmTelNo").val("660314362");
         $(By.xpath(".//*[@id='typeOfGoods-button']/span[1]")).click();
-        $("#ui-id-129").click();
+        $(By.xpath("//li[contains(text(),'Hardware')]")).click();
 
         //Address Definition
         $(By.xpath(".//*[@id='ui-id-11']/span[1]")).click();
@@ -76,7 +76,6 @@ public class CreateCustomer {
         $("#invoicingWeight-button > span.ui-icon.ui-icon-triangle-1-s").click();
         $(By.xpath("//li[contains(text(),'Pick-up weight')]")).click();
         $("#averageParcelWeigh").val("3.55");
-
 
 
 
