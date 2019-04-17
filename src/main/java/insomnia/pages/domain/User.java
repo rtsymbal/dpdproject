@@ -1,8 +1,7 @@
 package insomnia.pages.domain;
 
-import lombok.Data;
 
-import java.util.Objects;
+import lombok.Data;
 
 @Data
 public class User {
@@ -14,7 +13,7 @@ public class User {
         this.name = name;
         this.password = password;
     }
-//USING LAMBOK-------------------------------------------------------------------------------
+
 //    @Override
 //    public boolean equals(Object o) {
 //        if (this == o) return true;
@@ -53,6 +52,6 @@ public class User {
 //    public void setPassword(String password) {
 //        this.password = password;
 //    }
-
+//
 
 }
