@@ -49,7 +49,7 @@ public class CreateCustomer {
         $("#select-customer-address-geocode").click();
         $(".x-grid-cell-inner ").click();
         $("#save-toast-form-customer-address-geocode").click();
-//        $(By.xpath("//div[@id='editAddressToolbar']//div[contains(@class,'button button-add')]")).click();
+        $("#editAddressToolbar > div.button.button-add > span").click();
 
         //Commercial Detail
         $("#ui-id-2 > span.ui-accordion-header-icon.ui-icon.ui-icon-custom-plus").click();
@@ -66,5 +66,24 @@ public class CreateCustomer {
         $("#invoicingWeight-button > span.ui-icon.ui-icon-triangle-1-s").click();
         $(By.xpath("//li[contains(text(),'Pick-up weight')]")).click();
         $("#averageParcelWeigh").val("3.5");
+
+        //Save
+        $("#componentSaveButtonId").click();
+
+        //Confirmation popup
+        $("#yes-confirmation-save-button").click();
+
+        //Copy customer ID
+//        $("#customerId")
+
+        //Email information
+        $("#select-segment").click();
+        $("#customer-email-form-type-button > span.ui-icon.ui-icon-triangle-1-s").click();
+        $(By.xpath("//*[@id='customer-email-form-type-menu']/li[contains(text(),'Invoice')]")).click();
+        $("#customer-email-form-email").val("ivo.grancovskis@dpdgroup.com");
+        $(By.xpath("//*[@id=\"toastform-customer-email-definition-form\"]/div/div[1]/div[2]/div[2]/label/span[1]")).click();
+        $("#customer-email-toolbar-buttons > div.button.button-add > span").click();
+        $("#save-toast-form-customer-email-definition").doubleClick();
+
     }
 }

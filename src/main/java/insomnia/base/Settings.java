@@ -8,7 +8,7 @@ import lombok.Data;
 public class Settings {
     User roman = new User("E2ETSYMBAL", "R1EBTNv0keIda");
     String userEmail = "roman.tsymbal-external@dpdgroup.com";
-    String customerName = "E2E_TEST_ONE";
+    String customerName = "E2E_t_FLOW63";
 
     public void init() {
         Configuration.browser="chrome";
