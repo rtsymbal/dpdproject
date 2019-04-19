@@ -1,19 +1,20 @@
 package insomnia.pages.base;
 
 import com.codeborne.selenide.Configuration;
-import insomnia.pages.base.credentials.User;
-import lombok.Data;
+import insomnia.pages.base.domain.User;
 
-@Data
+
 public class Settings{
 
-    User roman = new User(
+    public static User user = new User(
             "E2ETSYMBAL",
             "R1EBTNv0keIda"
-);
+    );
 
-    String customerName = "E2E_t_FLOW63";
-    String userEmail = "roman.tsymbal-external@dpdgroup.com";
+    public static String customerName = "E2E_t_ONE";
+    public static String userEmail = "roman.tsymbal-external@dpdgroup.com";
+
+    public String pageURL = "/it4em/customer/corporateCustomerDefinition/?lang=en";
 
     public void init() {
         Configuration.browser="chrome";

@@ -1,33 +1,26 @@
 package insomnia.executions;
-
 import insomnia.pages.LoginPage;
 import insomnia.pages.base.Settings;
-import insomnia.pages.base.credentials.User;
-import org.graalvm.compiler.lir.LIRInstruction;
 import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.$;
 
-
-public class CreateCustomer extends LoginPage{
+public class CreateCustomer extends Settings{
 
     public static void main(String[] args) {
         new Settings()
                 .init();
 
-
         new LoginPage()
                 .open()
-                .loginAs(roman);
-
+                .loginAs(user);
 
         //Corporate Customer Definition
         $("#depotUnitId").val("1077");
         $(".ui-menu-item").click();
         $(By.xpath(".//*[@id='corporate-customer-main-section']/div[5]/div[2]/div[2]/div[2]/label/span[1]")).click();
-        $("#customerName").val(getCustomerName());
-        $("#shortName").val(getCustomerName());
-        $("#idmEmail").val(getUserEmail());
+        $("#customerName").val(customerName);
+        $("#shortName").val(customerName);
+        $("#idmEmail").val(userEmail);
         $("#phone").val("1234567890");
         $(By.xpath(".//*[@id='idmArea-button']/span[1]")).click();
         $(By.xpath("//li[contains(text(),'+33 - FRANCE')]")).click();
@@ -37,7 +30,7 @@ public class CreateCustomer extends LoginPage{
 
         //Address Definition
         $(By.xpath(".//*[@id='ui-id-11']/span[1]")).click();
-        $("#region-address-companyName").val(getCustomerName() + "_COMPANY");
+        $("#region-address-companyName").val(customerName + "_COMPANY");
         $("#region-address-serviceNote-button > span.ui-icon.ui-icon-triangle-1-s").click();
         $(By.xpath("//li[contains(text(),'E-mail')]")).click();
         $("#select-workarea").click();
