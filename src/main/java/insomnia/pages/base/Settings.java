@@ -9,10 +9,11 @@ public class Settings{
 
     User roman = new User(
             "E2ETSYMBAL",
-            "R1EBTNv0keIda",
-            "roman.tsymbal-external@dpdgroup.com");
+            "R1EBTNv0keIda"
+);
 
     String customerName = "E2E_t_FLOW63";
+    String userEmail = "roman.tsymbal-external@dpdgroup.com";
 
     public void init() {
         Configuration.browser="chrome";
