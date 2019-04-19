@@ -1,32 +1,33 @@
-package insomnia;
+package insomnia.executions;
 
-import insomnia.base.Settings;
 import insomnia.pages.LoginPage;
+import insomnia.pages.base.Settings;
+import insomnia.pages.base.credentials.User;
+import org.graalvm.compiler.lir.LIRInstruction;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
 
-public class CreateCustomer {
-
+public class CreateCustomer extends LoginPage{
 
     public static void main(String[] args) {
+        new Settings()
+                .init();
 
-        Settings settings = new Settings();
-        settings.init();
 
         new LoginPage()
                 .open()
-                .loginAs(settings.getRoman());
+                .loginAs(roman);
 
 
         //Corporate Customer Definition
         $("#depotUnitId").val("1077");
         $(".ui-menu-item").click();
         $(By.xpath(".//*[@id='corporate-customer-main-section']/div[5]/div[2]/div[2]/div[2]/label/span[1]")).click();
-        $("#customerName").val(settings.getCustomerName());
-        $("#shortName").val(settings.getCustomerName());
-        $("#idmEmail").val(settings.getUserEmail());
+        $("#customerName").val(getCustomerName());
+        $("#shortName").val(getCustomerName());
+        $("#idmEmail").val(getUserEmail());
         $("#phone").val("1234567890");
         $(By.xpath(".//*[@id='idmArea-button']/span[1]")).click();
         $(By.xpath("//li[contains(text(),'+33 - FRANCE')]")).click();
@@ -36,7 +37,7 @@ public class CreateCustomer {
 
         //Address Definition
         $(By.xpath(".//*[@id='ui-id-11']/span[1]")).click();
-        $("#region-address-companyName").val(settings.getCustomerName() + "_COMPANY");
+        $("#region-address-companyName").val(getCustomerName() + "_COMPANY");
         $("#region-address-serviceNote-button > span.ui-icon.ui-icon-triangle-1-s").click();
         $(By.xpath("//li[contains(text(),'E-mail')]")).click();
         $("#select-workarea").click();
@@ -68,10 +69,10 @@ public class CreateCustomer {
         $("#averageParcelWeigh").val("3.5");
 
         //Save
-        $("#componentSaveButtonId").click();
+//        $("#componentSaveButtonId").click();
 
         //Confirmation popup
-        $("#yes-confirmation-save-button").click();
+//        $("#yes-confirmation-save-button").click();
 
         //Copy customer ID
 //        $("#customerId")
