@@ -68,7 +68,8 @@ public class CreateCustomer extends Settings{
 //        $("#yes-confirmation-save-button").click();
 
         //Copy customer ID
-//        $("#customerId")
+//        String customerID = $("#customerId").getSelectedValue();
+//        System.out.println(customerID);
 
         //Email information
         $("#select-segment").click();
