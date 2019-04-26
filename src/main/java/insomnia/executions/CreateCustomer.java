@@ -1,4 +1,6 @@
 package insomnia.executions;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import insomnia.pages.LoginPage;
 import insomnia.pages.base.Settings;
 import org.openqa.selenium.By;
@@ -19,7 +21,7 @@ public class CreateCustomer extends Settings{
         $(".ui-menu-item").click();
         $(By.xpath(".//*[@id='corporate-customer-main-section']/div[5]/div[2]/div[2]/div[2]/label/span[1]")).click();
         $("#customerName").val(customerName);
-        $("#shortName").val(customerName);
+        $("#shortName").val("660314362");
         $("#idmEmail").val(userEmail);
         $("#phone").val("1234567890");
         $(By.xpath(".//*[@id='idmArea-button']/span[1]")).click();
@@ -62,14 +64,10 @@ public class CreateCustomer extends Settings{
         $("#averageParcelWeigh").val("3.5");
 
         //Save
-//        $("#componentSaveButtonId").click();
+        $("#componentSaveButtonId").click();
 
         //Confirmation popup
-//        $("#yes-confirmation-save-button").click();
-
-        //Copy customer ID
-//        String customerID = $("#customerId").getSelectedValue();
-//        System.out.println(customerID);
+        $("#yes-confirmation-save-button").click();
 
         //Email information
         $("#select-segment").click();
@@ -78,7 +76,13 @@ public class CreateCustomer extends Settings{
         $("#customer-email-form-email").val("ivo.grancovskis@dpdgroup.com");
         $(By.xpath("//*[@id=\"toastform-customer-email-definition-form\"]/div/div[1]/div[2]/div[2]/label/span[1]")).click();
         $("#customer-email-toolbar-buttons > div.button.button-add > span").click();
-        $("#save-toast-form-customer-email-definition").doubleClick();
+
+        Selenide.sleep(10000);
+        $("#save-toast-form-customer-email-definition").click();
+
+        //Copy customer ID
+        String customerID = $("#customerId").getValue();
+        System.out.println("Customer ID: " +customerID);
 
     }
 }

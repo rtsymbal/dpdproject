@@ -8,11 +8,11 @@ public class Settings{
 
     public static User user = new User(
             "E2ETSYMBAL",
-            "R1EBTNv0keIda"
+            "SU130383tra"
     );
 
-    public static String customerName = "E2E_t_ONE";
-    public static String userEmail = "roman.tsymbal-external@dpdgroup.com";
+    public static String customerName = "E2E_102_FLOW5C";
+    public static String userEmail = "daniel.piwek@dpdgroup.com";
 
     public String pageURL = "/it4em/customer/corporateCustomerDefinition/?lang=en";
 
@@ -21,7 +21,7 @@ public class Settings{
         Configuration.headless = false;
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1440x960";
-        Configuration.baseUrl = "http://10.240.20.156:8080";
+        Configuration.baseUrl = "http://10.240.20.150:8080";
     }
 
 }
