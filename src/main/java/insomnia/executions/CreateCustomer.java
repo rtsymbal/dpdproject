@@ -4,6 +4,9 @@ import com.codeborne.selenide.Selenide;
 import insomnia.pages.LoginPage;
 import insomnia.pages.base.Settings;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class CreateCustomer extends Settings{
@@ -74,11 +77,12 @@ public class CreateCustomer extends Settings{
         $("#customer-email-form-type-button > span.ui-icon.ui-icon-triangle-1-s").click();
         $(By.xpath("//*[@id='customer-email-form-type-menu']/li[contains(text(),'Invoice')]")).click();
         $("#customer-email-form-email").val("ivo.grancovskis@dpdgroup.com");
-        $(By.xpath("//*[@id=\"toastform-customer-email-definition-form\"]/div/div[1]/div[2]/div[2]/label/span[1]")).click();
+        $(By.xpath("//*[@id='toastform-customer-email-definition-form']/div/div[1]/div[2]/div[2]/label/span[1]")).click();
         $("#customer-email-toolbar-buttons > div.button.button-add > span").click();
 
         Selenide.sleep(10000);
         $("#save-toast-form-customer-email-definition").click();
+        //*[@id="ext-element-1"]/div[24]
 
         //Copy customer ID
         String customerID = $("#customerId").getValue();
