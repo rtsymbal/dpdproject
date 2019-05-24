@@ -18,7 +18,7 @@ public class Settings{
 
     public void init() {
         Configuration.browser="chrome";
-        Configuration.headless = true;
+        Configuration.headless = false;
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1440x960";
         Configuration.baseUrl = "http://10.240.20.150:8080";
