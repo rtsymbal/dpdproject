@@ -54,7 +54,7 @@ public class CreateCustomer extends Settings{
         $("#ui-id-2 > span.ui-accordion-header-icon.ui-icon.ui-icon-custom-plus").click();
         $("#taxNo").val("FR123456789");
         $("#industryName").val("V");
-        $("#ui-id-44").click();
+        $("#ui-id-40").click();
 
         //Credit Information
         $("#ui-id-4 > span.ui-accordion-header-icon.ui-icon.ui-icon-custom-plus").click();
